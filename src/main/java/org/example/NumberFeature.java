@@ -9,32 +9,24 @@ public class NumberFeature {
         Scanner in = new Scanner(System.in);
         inputNumber = in.nextInt();
         // 你的代码逻辑
-       package org.example;
 
-import java.util.Scanner;
+        digital_eigenvalue(inputNumber, result);
 
-public class OddEven {
-    public static void main(String[] args) {
-        int number;
-        int countOdd = 0;
-        int countEven = 0;
-        Scanner in = new Scanner(System.in); // 数字用空格或换行隔开，每次读入一个，直到输入‘-1’
-        do{
-            number = in.nextInt();
-            if(number != -1)
-            {
-                if (number % 2 == 0) {
-                    countEven += 1;
-                } else {
-                    countOdd += 1;
-                }
-            }
-        }while(number != -1); // 理解do while和while循环的区别
-        System.out.print(countOdd+" ");
-        System.out.println(countEven);
+
     }
-}
 
+    public static void digital_eigenvalue(int inputNumber, int result) {
+        int number;
+        int digit_position = 1;
+        int binary_bit_value = 1;
+        while (inputNumber > 0) {
+            number = inputNumber % 10;
+            inputNumber = inputNumber / 10;
+            if (number % 2 == digit_position % 2)
+                result += binary_bit_value;
+            binary_bit_value *= 2;
+            digit_position++;
+        }
         System.out.println(result);
     }
 }
